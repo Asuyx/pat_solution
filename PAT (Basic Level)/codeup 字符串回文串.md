@@ -22,6 +22,7 @@
 ## C++代码
 
 ```cpp
+//我的写法
 #include<cstdio>
 #include<cstring>
 int main(){
@@ -39,5 +40,27 @@ int main(){
     }	
 	return 0;
 	
+}
+//晴神写法
+#include<cstdio>
+#include<cstring>
+const int maxn=256;
+bool judge(char str[]){
+	int len=strlen(str);
+	for(int i=0;i<len/2;i++)
+		if(str[i]!=str[len-1-i])
+			return false;
+	return true;
+}
+int main(){
+	char str[maxn];
+	while(scanf("%s",str)!=EOF){
+		bool flag=judge(str);
+		if(flag==true)
+			printf("YES");
+		else
+			printf("NO");
+		}
+	return 0;
 }
 ```
